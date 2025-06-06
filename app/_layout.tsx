@@ -6,9 +6,11 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { useAuthStore } from '@/store/authStore';
+import { useAuthStore } from '@/store/authStore'
+import { useFrameworkReady } from '@/hooks/useFrameworkReady';
 
 export default function RootLayout() {
+  useFrameworkReady();
   const colorScheme = useColorScheme();
   const { initialize } = useAuthStore();
   
